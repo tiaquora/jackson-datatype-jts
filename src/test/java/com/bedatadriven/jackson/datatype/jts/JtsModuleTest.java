@@ -2,7 +2,6 @@ package com.bedatadriven.jackson.datatype.jts;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import org.locationtech.jts.geom.*;
 import org.easymock.EasyMock;
 import org.junit.Before;
@@ -10,11 +9,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertThat;
-
 public class JtsModuleTest {
-	private GeometryFactory gf = new GeometryFactory();
 	private ObjectMapper mapper;
 	@Before
 	public void setupMapper() {

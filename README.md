@@ -22,6 +22,7 @@ To use the module in Maven-based projects, use following dependency:
 
 GraphHopper updates compared to [upstream](https://github.com/bedatadriven/jackson-datatype-jts):
 
+ * 2.19.2     uses JTS 1.20.0
  * 2.14       uses JTS 1.19.0, requires Java 8
  * 0.12-2.5-1 uses JTS 1.15.1
  * 0.10-2.5-2 new groupId `com.graphhopper.external` and introduced JTS 1.15.0
@@ -61,4 +62,11 @@ You can also read GeoJSON in as JTS geometry objects:
 ```java
 InputStream in;
 Point point = mapper.readValue(in, Point.class);
+```
+
+# Release
+
+For now do it manually and see [the maven command here](https://github.com/graphhopper/graphhopper/blob/master/.github/workflows/publish-maven-central.yml):
+```
+mvn deploy -P release -DskipTests=true -Dpgp.secretkey=keyring:id=0E2FBADB -B
 ```
